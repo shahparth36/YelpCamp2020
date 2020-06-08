@@ -1,0 +1,65 @@
+<%- include("../partials/header")-%>
+
+<link rel = "stylesheet" href = "/stylesheets/showcampground.css" >
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-3">
+            <p id = "brand" class = "lead">YelpCamp</p>
+            <div class = "list-group">
+                <li class = "list-group-item active">Info 1</li>
+                <li class = "list-group-item">Info 2</li>
+                <li class = "list-group-item">Info 3</li>
+            </div>
+        </div>
+        <div class = "col-md-9">
+          <div id = "card" class="card">
+                <img class="card-img-top" src ="<%= campground.image %>" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><%= campground.name %><span id = "price" >₹ <%= campground.price %>/Night</span></h5>
+                    <div class="card-text">
+                        <p><%= campground.Description %></p>
+
+
+                        <form action= "/campgrounds/<%=campground._id %>?_method=DELETE" method ="POST">
+                            <em id = "italicText">Created by <span><a href ="/users/<%=campground.author.id %>"><%= campground.author.username %></a> ;</span><span>  <%= moment(campground.createdAt).fromNow() %></span></em>
+                            <% if (currentUser && campground.author.id.equals(currentUser._id)) { %>
+                            <button id ="deleteCampgroundButton" class = "btn btn-danger"><i class="fas fa-trash-alt"></i>  Delete Campground</button>
+                            <span id = "editButton"><a href = "/campgrounds/<%= campground._id%>/edit" class = "btn btn-warning"> <i class="fas fa-edit"></i>  Edit Campground</a></span>
+                        </form>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id = "reviewCard" class="card text-white bg-dark mb-3">
+                <div class="card-header">REVIEWS</div>
+                <div class="card-body">
+                    <h5 class="card-title"> <a class = "btn btn-success" href = "/campgrounds/<%= campground._id %>/comments/new">Add Comment</a></h5>
+                    <hr>
+                    <% campground.comments.forEach(function(comment) {  %>
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <strong><%= comment.author.username %></strong>
+                            <span id = "time"><%= moment(comment.createdAt).fromNow() %></span>
+                            <p id = "comment" ><%= comment.text %></p>
+                            <span>
+                                <% if (currentUser && comment.author.id.equals(currentUser._id)) { %>
+                            <form action = "/campgrounds/<%= campground._id%>/comments/<%= comment._id %>?_method=DELETE" method= "POST">
+                                <span><a id = "anchortag" href = "/campgrounds/<%= campground._id%>/comments/<%= comment._id %>/edit"> <i id = "editSymbol" class="fas fa-edit"></i></a></span>
+                                <button id ="deleteButton" class = "btn btn-danger btn-sm"><i id = "deleteSymbol" class="fas fa-trash-alt"></i></button>
+                                <% } %>
+                            </form>
+                            </span>
+                        </div>
+                    </div>
+                    <%  }); %>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer")-%>

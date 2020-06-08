@@ -1,0 +1,32 @@
+<%- include("../partials/header")-%>
+
+<div class = "container" style = "margin-left: 30%">
+	<h1>Edit Comment</h1>
+	<div class = "container">
+	<form action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+<div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<%= comment.author.username%>">
+    </div>
+</div>
+<div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Comment</label>
+    <div class="col-sm-10">
+      <input type="text" style = "width: 50%" class="form-control" value = "<%= comment.text%>" id="exampleInputEmail1" aria-describedby="emailHelp" name = "comment[text]">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" style = "margin-right:20px;">Submit</button>
+  <a class = "btn btn-success" href = "/campgrounds">Go Back</a>
+</form>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+<%- include("../partials/footer")-%>
+</div>
+

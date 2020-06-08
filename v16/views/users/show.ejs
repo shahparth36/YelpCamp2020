@@ -1,0 +1,53 @@
+<%- include("../partials/header")-%>
+
+<link rel = "stylesheet" href = "/stylesheets/showprofile.css">
+
+<div class = "container">
+    <div class = "col-md-4">
+
+    </div>
+    <div id ="main-div" class = "col-md-12">
+        <p><%= user.username%>'s Profile</p>
+        <hr>
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input id = "nametext"type="text" readonly class="form-control-plaintext" id="staticEmail" value="<%= user.firstName%> <%= user.lastName %>">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+                <input id = "usernametext" type="text" readonly class="form-control-plaintext" id="staticEmail" value="<%= user.username %>">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input id = "emailtext" type="text" readonly class="form-control-plaintext" id="staticEmail" value="<%= user.email %>">
+            </div>
+        </div>
+        <hr>
+        <p></p>
+        <p>Campgrounds Created by <%= user.firstName%> <%= user.lastName %> :-</p>
+        <% campgrounds.forEach(function(campground) { %>
+		<div id ="card" class="row col-md-4">
+			<div class="col mb-4">
+				<div id = "subCard" class="card h-100">
+					<img id = "image" src="<%= campground.image %>" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title"><a href = "/campgrounds/<%=campground.id%>"><%= campground.name %></a></h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% }); %>
+    </div>
+</div>
+
+
+
+
+<%- include("../partials/footer")-%>

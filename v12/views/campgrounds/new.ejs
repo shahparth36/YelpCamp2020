@@ -1,0 +1,30 @@
+<%- include("../partials/header")-%>
+
+<div class = "container" style = "margin-left: 30%">
+	<h1>Create a new Campground!</h1>
+	<div class = "container">
+	<form action = "/campgrounds" method ="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Campground Name</label>
+    <input type="text" style = "width: 50%" class="form-control" placeholder = "Enter Campground name" id="exampleInputEmail1" aria-describedby="emailHelp" name = "name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Image URL</label>
+	  <input type="text" style = "width: 50%" placeholder = "Enter image URL" name = "image" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Rate (In ₹)</label>
+    <input type="text" style = "width: 50%" class="form-control" placeholder = "Enter Price" id="exampleInputEmail1" aria-describedby="emailHelp" name = "price">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+    <input type="text" style = "width: 50%" class="form-control" placeholder = "Enter Description" id="exampleInputEmail1" aria-describedby="emailHelp" name = "Description">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>	
+	<a href = "/campgrounds">Go Back</a>
+
+<%- include("../partials/footer")-%>
+	</div>
+</div>
+

@@ -1,0 +1,35 @@
+#main-div {
+    max-width: 30rem;
+    margin: 100px auto;
+}
+
+#editComment {
+    font-family: 'Pacifico', cursive;
+    font-size: 4.5rem;
+    margin-bottom: 50px;
+}
+
+#username {
+    margin-top: 7px;
+}
+
+#usernametext {
+    padding-left: 35px;
+}
+
+#createDiv {
+    padding-left: 0px;
+}
+
+#update {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#updateSymbol {
+    margin-left: 5px;
+}
+
+#comment {
+    padding-bottom: 15px;
+}

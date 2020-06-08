@@ -1,0 +1,19 @@
+#body {
+   padding:0px;
+   padding-bottom:160px;   /* Height of the footer */
+}
+#footer {
+   position: relative;
+   padding-top: 55px;
+   padding-left: 55px;
+   top: 240px;
+   bottom:0;
+   width:100%;
+   height:160px;   /* Height of the footer */
+   background: rgb(225, 235, 228);
+}
+
+img {
+    width: 100%;
+}
+

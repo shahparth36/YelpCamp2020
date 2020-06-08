@@ -1,0 +1,28 @@
+<%- include("../partials/header")-%>
+
+<div class = "container" style = "margin-left: 30%">
+	<h1>Create a new Campground!</h1>
+	<div class = "container">
+	<form action = "/campgrounds" method ="POST" enctype = "multipart/form-data">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Campground Name</label>
+    <input type="text" style = "width: 50%" class="form-control" placeholder = "Enter Campground name" id="exampleInputEmail1" aria-describedby="emailHelp" name = "campground[name]">
+  </div>
+  <div class="form-group">
+    <label for="image">Image</label>
+    <input type="file" id="image" name="image" accept="image/*" required>
+</div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Rate (In ₹)</label>
+    <input type="text" style = "width: 50%" class="form-control" placeholder = "Enter Price" id="exampleInputEmail1" aria-describedby="emailHelp" name = "campground[price]">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+    <input type="text" style = "width: 50%" class="form-control" placeholder = "Enter Description" id="exampleInputEmail1" aria-describedby="emailHelp" name = "campground[Description]">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+	<a href = "/campgrounds">Go Back</a>
+	</div>
+</div>
+<%- include("../partials/footer")-%>

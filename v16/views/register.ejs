@@ -1,0 +1,66 @@
+<%- include("./partials/header")-%>
+
+<link rel = "stylesheet" href = "/stylesheets/register.css">
+
+<div id = "main-div" class="card text-center">
+      <div class="card-body">
+          <h1 id = "signIn" class="card-title">Sign Up</i></h1>
+          <p class="card-text">
+              <form action = "/register" method = "POST">
+                   <div class="input-group mb-3 myclass">
+                      <div  class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name = "username" required>
+                    </div>
+
+                    <div class="input-group mb-3 myclass">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                        </div>
+
+                        <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" name = "email" required>
+
+                        <small>Please provide a valid Email Address. This will be used</small>
+
+                        <div>
+                            <small>in case you forget your password.</small>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3 myclass">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-address-book"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="First Name" aria-label="Username" aria-describedby="basic-addon1" name = "firstName" required>
+                    </div>
+
+                    <div class="input-group mb-3 myclass">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-address-book"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Last Name" aria-label="Username" aria-describedby="basic-addon1" name = "lastName" required>
+                    </div>
+
+                    <div class="input-group mb-3 myclass">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input id ="first" type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1" name = "password" required>
+                    </div>
+
+                    <div class="input-group mb-3 myclass">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input id ="second" type="password" class="form-control" placeholder="Confirm Password" aria-label="Username" aria-describedby="basic-addon1" name = "Password" required>
+                    </div>
+
+                    <div id = "logIn" class="form-group form-check">
+                        <button id = "register" type="submit" class="btn btn-primary">Register<i id = "registerSymbol" class="fas fa-arrow-right"></i></button>
+                    </div>
+              </form>
+          </p>
+      </div>
+  </div>
+<%- include("./partials/footer")-%>

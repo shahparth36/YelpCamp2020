@@ -1,0 +1,43 @@
+<%- include("../partials/header")-%>
+
+<link rel = "stylesheet" href = "/stylesheets/index.css">
+
+<div class = "container">
+	<header id = "header" class = "jumbotron">
+		<div class = "container">
+			<h1><span><i id = "campSymbol" class="fas fa-campground"></i></span>   Welcome to YelpCamp!</h1>
+			<p id = "message" >View our Campgrounds from all over the world</p>
+			<p id = "button" ><a href = "/campgrounds/new" class="btn btn-warning btn-lg">Add a new Campground</a></p>
+		</div>
+		<p>
+			<div>
+				<form action = "/campgrounds" method = "GET" class = "form-inline">
+					<div class ="form-group">
+						<input id = "text" type = "text" name = "search" placeholder = "Campground Search..." class = "form-control">
+						<input id = "searchButton" type = "submit" value = "Search" class = "btn btn-warning">
+					</div>
+			</div>
+			</form>
+		</p>
+	</header>
+
+	<% for (var i = 0 ; i < campgrounds.length ; i++) { %>
+		<div id = "card" class="row col-md-4">
+			<div class="col mb-4">
+				<div id ="subCard" class="card h-100">
+					<img id = "image" src="<%= campgrounds[i]["image"] %>" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title"><%= campgrounds[i]["name"] %></h5>
+						<p>
+							<span id = "price">Rate - ₹ <%= campgrounds[i]["price"] %>/Night</span>
+						</p>
+						<p> <a href="/campgrounds/<%= campgrounds[i]["_id"] %>" class = "btn btn-warning">More Info!</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% } %>
+
+</div>
+
+<%- include("../partials/footer")-%>

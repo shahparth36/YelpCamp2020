@@ -1,0 +1,47 @@
+#header {
+    margin: 50px auto;
+    background-color: #141414;
+    color: white;
+    padding-bottom: 35px;
+    padding-top: 55px;
+}
+
+#campSymbol {
+    font-size: 70px;
+}
+
+#message {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    padding-top: 5px;
+}
+
+#button {
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+#text {
+    margin-left: 15px;
+}
+
+#searchButton {
+    margin-left: 20px;
+}
+
+#card {
+    display: inline-flex;
+}
+
+#subCard {
+    width: 100%;
+}
+
+#image {
+    size: auto;
+}
+
+/*#price {
+    */
+    /*    float: left;*/
+    /*}*/

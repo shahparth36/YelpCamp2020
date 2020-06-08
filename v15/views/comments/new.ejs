@@ -1,0 +1,30 @@
+<%- include("../partials/header")-%>
+
+<link rel = "stylesheet" href = "/stylesheets/newcomment.css">
+
+<div id = "main-div" class="card text-center">
+      <div class="card-body">
+          <h1 id = "addComment" class="card-title">Add Comment</h1>
+          <p class="card-text">
+              <form action = "/campgrounds/<%=campground._id %>/comments" method ="POST">
+                   <div id = "name" class="input-group mb-3">
+                      <span id = "username">Username</span>
+                      <input id ="usernametext" readonly type="text" class="form-control-plaintext" value = "<%= currentUser.username %>" id="staticEmail">
+                    </div>
+                    <div id = "comment" class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-comment"></i></span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder = "Comment" name = "comment[text]">
+                      </div>
+                    <div id = "createDiv" class="form-group form-check">
+                        <button id ="create" type="submit" class="btn btn-primary">Create <i id = "createSymbol" class = "fas fa-plus"></i></button>
+                    </div>
+              </form>
+          </p>
+      </div>
+  </div>
+
+<%- include("../partials/footer")-%>
+
+

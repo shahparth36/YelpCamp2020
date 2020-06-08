@@ -1,0 +1,39 @@
+<%- include("./partials/header")-%>
+<head>
+	<link rel="stylesheet" href="/stylesheets/forgot.css">
+</head>
+
+<div id = "main-div" class="card text-center">
+  <div id = "card" class="card-body">
+	  	<form action = "/forgot" method = "POST">
+	        <h1 id = "signIn" class="card-title">Trouble Logging In?</h1>
+	        <hr>
+	        <small>Enter the Email Address with which you</small>
+	        <div>
+	            <small>registered your account.</small>
+	        </div>
+
+	        <p class="card-text">
+		      	<div class="input-group mb-3">
+		          <div id ="username" class="input-group-prepend">
+				      <span class="input-group-text" id="basic-addon1"><i id ="emailSymbol" class="fas fa-envelope"></i></span>
+				  </div>
+				  <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" name = "email" required>
+			    </div>
+
+			    <div id = "button" class="form-group">
+			      <input type="submit" class="btn btn-primary" value="Send Reset Password Link">
+			    </div>
+				<div id = "or">
+			      <span id ="hr">
+			       OR
+			      </span>
+		 	    </div>
+			    <div id = "link">
+			      <a id = "anchortag" href="/register"> Create New Account</a>
+			    </div>
+	        </p>
+	   	</form>
+  </div>
+</div>
+<%- include("./partials/footer")-%>

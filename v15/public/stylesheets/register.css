@@ -1,0 +1,31 @@
+#main-div {
+    max-width: 25rem;
+    margin: 60px auto;
+}
+
+#signIn {
+    font-family: 'Pacifico', cursive;
+    font-size: 4.0rem;
+    margin-bottom: 50px;
+}
+
+.myclass {
+    padding-bottom: 15px;
+}
+
+input {
+    display: inline-block;
+}
+
+#logIn {
+    padding-left: 0px;
+}
+
+#register {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#registerSymbol {
+    margin-left: 17px;
+}

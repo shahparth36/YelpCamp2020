@@ -1,0 +1,42 @@
+#main-div {
+    max-width: 30rem;
+    margin: 100px auto;
+}
+
+#signIn {
+    font-family: 'Pacifico', cursive;
+    font-size: 4.5rem;
+    margin-bottom: 50px;
+}
+
+#name,
+#description {
+    padding-bottom: 15px;
+}
+
+#image {
+    margin-bottom: 15px;
+}
+
+#amount {
+    padding-bottom: 15px;
+}
+
+
+#camera {
+    height: 30px;
+}
+
+#createDiv {
+    padding-left: 0px;
+}
+
+#create {
+
+    margin-top: 10px;
+    width: 100%;
+}
+
+#createSymbol {
+    margin-left: 5px;
+}

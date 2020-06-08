@@ -1,0 +1,27 @@
+#main-div {
+    margin-top: 20px;
+}
+
+#card {
+    display: inline-flex;
+}
+
+#subCard {
+    width: 100%;
+}
+
+#image {
+    size: auto;
+}
+
+#nametext {
+    padding-left: 20px;
+}
+
+#usernametext {
+    padding-left: 20px;
+}
+
+#emailtext {
+    padding-left: 20px;
+}

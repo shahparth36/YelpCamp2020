@@ -1,0 +1,29 @@
+<%- include("../partials/header")-%>
+
+<div class = "container" style = "margin-left: 30%">
+	<h1>Edit <%= campground.name %></h1>
+	<div class = "container">
+	<form action = "/campgrounds/<%= campground._id%>?_method=PUT" method ="POST" enctype = "multipart/form-data">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Campground Name</label>
+    <input type="text" style = "width: 50%" class="form-control" value = "<%= campground.name %>" id="exampleInputEmail1" aria-describedby="emailHelp" name = "name">
+  </div>
+  <div class="form-group">
+    <label for="image">Image</label>
+    <input type="file" id="image" name="image" accept="image/*">
+</div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Rate</label>
+    <input type="text" style = "width: 50%" class="form-control" value = "<%= campground.price %>" id="exampleInputEmail1" aria-describedby="emailHelp" name = "price">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+    <input type="text" style = "width: 50%" class="form-control" value = "<%= campground.Description %>" id="exampleInputEmail1" aria-describedby="emailHelp" name = "Description">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+	<a href = "/campgrounds">Go Back</a>
+	</div>
+</div>
+
+<%- include("../partials/footer")-%>

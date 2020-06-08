@@ -1,0 +1,58 @@
+#brand {
+    margin-top: 20px;
+}
+
+#card {
+    max-width: 50rem;
+    margin-top: 20px;
+}
+
+#price {
+    float: right;
+}
+
+#italicText {
+    float: left;
+}
+
+#deleteCampgroundButton {
+    float: right;
+    margin-left: 12px;
+}
+
+#editButton {
+    float: right;
+}
+
+#reviewCard {
+    max-width: 50rem;
+    margin-top: 20px;
+    background-color: black;
+}
+
+#time {
+    float: right;
+}
+
+#comment {
+    padding-right: 10px;
+}
+
+#anchortag {
+    margin-bottom: 10px;
+    color: #ffc107;
+    margin-right: 10px
+}
+
+#editSymbol {
+    font-size: 1.5em;
+}
+
+#deleteButton {
+    margin-bottom: 10px;
+}
+
+#deleteSymbol {
+    font-size: 1em;
+    background-color: #dc3545
+}

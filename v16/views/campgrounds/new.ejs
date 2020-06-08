@@ -1,0 +1,45 @@
+<%- include("../partials/header")-%>
+
+<link rel = "stylesheet" href = "/stylesheets/newcampground.css">
+
+<div id = "main-div" class="card text-center">
+      <div class="card-body">
+          <h1 id = "signIn" class="card-title">Create Campground</h1>
+          <p class="card-text">
+              <form action = "/campgrounds" method ="POST" enctype = "multipart/form-data">
+                   <div id = "name" class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-campground"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Campground Name" aria-label="Username" aria-describedby="basic-addon1" name = "campground[name]" required>
+                    </div>
+                    <div id = "image" class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span id ="camera" class="input-group-text" id="basic-addon1"><i id ="Camera" class="fas fa-camera-retro"></i></span>
+                      </div>
+                      <input type="file" id="image" name="image" accept="image/*"  required>
+                    </div>
+                    <div id = "amount" class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-wallet"></i></span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder = "Rate (In ₹)" name = "campground[price]">
+                        <div class="input-group-append">
+                          <span class="input-group-text">.00</span>
+                        </div>
+                      </div>
+
+                      <div id = "description" class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Description</span>
+                        </div>
+                        <textarea class="form-control" aria-label="With textarea" name = "campground[Description]" ></textarea>
+                      </div>
+                    <div id = "createDiv" class="form-group form-check">
+                        <button id ="create" type="submit" class="btn btn-primary">Create <i id = "createSymbol" class = "fas fa-plus"></i></button>
+                    </div>
+              </form>
+          </p>
+      </div>
+  </div>
+<%- include("../partials/footer")-%>

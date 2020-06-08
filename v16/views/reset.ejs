@@ -1,0 +1,31 @@
+
+<%- include("./partials/header")-%>
+
+ <link rel = "stylesheet" href = "/stylesheets/reset.css">
+
+ <div id = "main-div" class="card text-center">
+	  <div id = "card" class="card-body">
+		  	<form action = "/reset/<%= token %>" method = "POST">
+		   		<h1 id = "reset" class="card-title">Reset Password</h1>
+		        <hr>
+		        <p class="card-text">
+			      	<div class="input-group mb-3">
+				        <div class="input-group-prepend myclass">
+						    <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="New Password" aria-label="Username" aria-describedby="basic-addon1" name = "password" required>
+					</div>
+					<div class="input-group mb-3">
+				        <div class="input-group-prepend myclass">
+						    <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="Retype Password" aria-label="Username" aria-describedby="basic-addon1" name = "Password" required>
+					</div>
+					<div id ="button" class="form-group">
+						<input type="submit" class="btn btn-primary" value="Reset Password">
+					</div>
+		        </p>
+	  	   	</form>
+	  </div>
+ </div>
+<%- include("./partials/footer")-%>
