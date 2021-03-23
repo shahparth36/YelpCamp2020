@@ -1,7 +1,36 @@
 <%- include("../partials/header")-%>
 
 <link rel = "stylesheet" href = "/stylesheets/showcampground.css" >
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+<style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        margin-top: 100px;
+        width: 700px;
+        height: 400px;
+      }
+      .marker {
+        background-image: url('/images/mapbox-icon.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .mapboxgl-popup {
+        max-width: 200px;
+      }
 
+      .mapboxgl-popup-content {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+      }
+</style>
 <div class = "container">
     <div class = "row">
         <div class = "col-md-3">
@@ -19,20 +48,19 @@
                     <h5 class="card-title"><%= campground.name %><span id = "price" >₹ <%= campground.price %>/Night</span></h5>
                     <div class="card-text">
                         <p><%= campground.Description %></p>
-
-
                         <form action= "/campgrounds/<%=campground._id %>?_method=DELETE" method ="POST">
-                            <em id = "italicText">Created by <span><a href ="/users/<%=campground.author.id %>"><%= campground.author.username %></a> ;</span><span>  <%= moment(campground.createdAt).fromNow() %></span></em>
+                            <div>
+                                <em id = "italicText">Created by <span><a href ="/users/<%=campground.author.id %>"><%= campground.author.username %></a> ;</span><span>  <%= moment(campground.createdAt).fromNow() %></span></em>
+                            </div>
                             <% if (currentUser && campground.author.id.equals(currentUser._id)) { %>
-                            <button id ="deleteCampgroundButton" class = "btn btn-danger"><i class="fas fa-trash-alt"></i>  Delete Campground</button>
-                            <span id = "editButton"><a href = "/campgrounds/<%= campground._id%>/edit" class = "btn btn-warning"> <i class="fas fa-edit"></i>  Edit Campground</a></span>
-                        </form>
-                        <% } %>
-                    </div>
+                                <button id ="deleteCampgroundButton" class = "btn btn-danger"><i class="fas fa-trash-alt"></i>  Delete Campground</button>
+                                <span id = "editButton"><a href = "/campgrounds/<%= campground._id%>/edit" class = "btn btn-warning"> <i class="fas fa-edit"></i>  Edit Campground</a></span>
+                            </form>
+                            <% } %>
+                        </div>
+                    <div id='map'></div>
                 </div>
             </div>
-
-
             <div id = "reviewCard" class="card text-white bg-dark mb-3">
                 <div class="card-header">REVIEWS</div>
                 <div class="card-body">
@@ -61,5 +89,25 @@
         </div>
     </div>
 </div>
+<script>
+var campground = <%- JSON.stringify(campground) %>;
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2hhaHBhcnRoMzYiLCJhIjoiY2ttbHBneTVoMWN1bDJvcGZscm1xeTI2OCJ9.XhCl6MaW_3IJq2jLITVtFg';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/light-v10',
+  center: campground.coordinates,   
+  zoom: 10
+});
 
+// create a HTML element for our campground location/marker
+var el = document.createElement('div');
+el.className = 'marker';
+
+// make a marker for our campground location and add to the map
+new mapboxgl.Marker(el)
+.setLngLat(campground.coordinates)
+.setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+.setHTML('<h3>' + campground.name + '</h3><p>' + campground.Location + '</p>'))
+.addTo(map);
+</script>
 <%- include("../partials/footer")-%>

@@ -35,6 +35,12 @@
                         </div>
                         <textarea class="form-control" aria-label="With textarea" name = "Description" value  = "<%= campground.Description %>" ></textarea>
                       </div>
+                      <div id = "place" class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Location</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Location" aria-label="Location" aria-describedby="basic-addon1" value="<%= campground.Location %>" name = "Location" required>
+                      </div>
                     <div id = "update" class="form-group form-check">
                         <button id ="create" type="submit" class="btn btn-primary">Update <i id = "createSymbol" class = "fas fa-edit"></i></button>
                     </div>
